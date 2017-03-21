@@ -10,7 +10,7 @@
 
     <string name="wechat_onlongclick_prompt">微信辅助功能，详情请点击</string>
 
-    <string name="none_note_items">这里什么都没有，点击按钮新建一条便笺吧。</string>
+    <string name="none_note_items">这里什么都没有，点击按钮新建一条便签吧。</string>
 
     <string name="auto_copy_selection">结束分词时自动复制选中内容</string>
 
@@ -29,4 +29,6 @@
     <string name="description">
         核心功能源于 Smartisan OS 的 BigBang 功能。App 打开会从剪切板读取文字并显示，长按会弹出 BigBang 页面进行分词显示。 支持监听剪切板，当有复制内容会弹出一个按钮以打开 BigBang 分词页面。\n支持在微信中使用 BigBang，提供两种方案。\n免 root 方案：需要在系统设置中开启权限，目前仅支持聊天气泡文字，点击文字就可以打开 BigBang 页面。\nXposed 方案：需要安装 Xposed 框架，在 Xposed 中可以找到 BigBang 模块，目前支持聊天气泡文字和朋友圈文字，点击两下触发。\n
     </string>
+
+    <string name="auto_save">分词结束后自动存为便签</string>
 </resources>

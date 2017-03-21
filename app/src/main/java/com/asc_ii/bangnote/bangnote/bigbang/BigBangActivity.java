@@ -15,6 +15,7 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
 
     public static final String EXTRA_TEXT = "extra_text";
     private BigBangLayout mLayout;
+    String textToBang;
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -39,13 +40,14 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
         Uri data = intent.getData();
         if (data != null) {
             String text = data.getQueryParameter(EXTRA_TEXT);
+            textToBang = text;
 
             if (TextUtils.isEmpty(text)) {
                 finish();
                 return;
             }
 
-            SimpleParser parser = BigBang.getSegmentParser();
+            SimpleParser parser = BigBang.getSegmentParser(getApplicationContext());
             parser.parse(text, new HandlerCallback<String[]>() {
                 @Override
                 public void onFinish(String[] result) {
@@ -71,6 +73,7 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
         super.onBackPressed();
         String selectedText = mLayout.getSelectedText();
         BigBang.startAction(this, BigBang.ACTION_BACK, selectedText);
+        BigBang.startAction(this, BigBang.ACTION_SAVE, textToBang);
     }
 
     @Override

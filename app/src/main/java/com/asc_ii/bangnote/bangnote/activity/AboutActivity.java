@@ -31,7 +31,7 @@ public class AboutActivity extends me.drakeet.support.about.AboutActivity {
     @Override
     protected void onCreateHeader(ImageView icon, TextView slogan, TextView version) {
         icon.setImageResource(R.mipmap.ic_launcher);
-        slogan.setText("关于 BangNote");
+        slogan.setText(getString(R.string.about_bangnote));
         version.setText(BuildConfig.VERSION_NAME);
     }
 
@@ -73,7 +73,7 @@ public class AboutActivity extends me.drakeet.support.about.AboutActivity {
     @Override
     protected void onActionClick(View action) {
         super.onActionClick(action);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/baoyongzhang/BigBang"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/FrankSFLYS/BangNote"));
         startActivity(intent);
     }
 

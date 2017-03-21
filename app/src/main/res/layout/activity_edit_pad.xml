@@ -20,6 +20,7 @@
         android:id="@+id/edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
         android:maxLines="2"
         android:hint="@string/edit_title"/>
 
@@ -28,6 +29,7 @@
         android:lineSpacingExtra="2dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textSize="15sp"
         android:gravity="start" />
 
 </LinearLayout>

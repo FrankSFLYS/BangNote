@@ -5,16 +5,25 @@
 package com.asc_ii.bangnote.bangnote.bigbang;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.StringDef;
 
+import com.asc_ii.bangnote.bangnote.Config;
+import com.asc_ii.bangnote.bangnote.ThirdPartyParser;
 import com.asc_ii.bangnote.bangnote.action.Action;
+import com.asc_ii.bangnote.bangnote.segment.CharacterParser;
 import com.asc_ii.bangnote.bangnote.segment.NetworkParser;
 import com.asc_ii.bangnote.bangnote.segment.SimpleParser;
+import com.baoyz.treasure.Treasure;
 
 import java.lang.annotation.Retention;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.asc_ii.bangnote.bangnote.SegmentEngine.TYPE_CHARACTER;
+import static com.asc_ii.bangnote.bangnote.SegmentEngine.TYPE_NETWORK;
+import static com.asc_ii.bangnote.bangnote.SegmentEngine.TYPE_THIRD;
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 
@@ -27,6 +36,7 @@ public class BigBang {
     public static final String ACTION_SHARE = "share";
     public static final String ACTION_COPY = "copy";
     public static final String ACTION_BACK = "back";
+    public static final String ACTION_SAVE = "save";
     private static SimpleParser sParser;
     private static int sItemSpace;
     private static int sLineSpace;
@@ -38,7 +48,7 @@ public class BigBang {
         sItemTextSize = itemTextSize;
     }
 
-    @StringDef({ACTION_SEARCH, ACTION_SHARE, ACTION_COPY, ACTION_BACK})
+    @StringDef({ACTION_SEARCH, ACTION_SHARE, ACTION_COPY, ACTION_BACK, ACTION_SAVE})
     @Retention(SOURCE)
     public @interface ActionType {
 
@@ -68,10 +78,19 @@ public class BigBang {
         }
     }
 
-    public static SimpleParser getSegmentParser() {
-        if (sParser == null) {
-            // TODO Default parser
-            sParser = new NetworkParser();
+    public static SimpleParser getSegmentParser(Context context) {
+        String segmentEngine = Treasure.get(context, Config.class).getSegmentEngine();
+        switch (segmentEngine) {
+            case TYPE_CHARACTER:
+                return new CharacterParser();
+            case TYPE_NETWORK:
+                if (!isNetworkAvailable(context)) {
+                    return new ThirdPartyParser(context);
+                } else {
+                    return new NetworkParser();
+                }
+            case TYPE_THIRD:
+                return new ThirdPartyParser(context);
         }
         return sParser;
     }
@@ -90,5 +109,29 @@ public class BigBang {
 
     public static int getItemTextSize() {
         return sItemTextSize;
+    }
+
+    private static boolean isNetworkAvailable(Context context) {
+
+        // 获得网络状态管理器
+        ConnectivityManager connectivityManager = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (connectivityManager == null) {
+            return false;
+        } else {
+            // 建立网络数组
+            NetworkInfo[] net_info = connectivityManager.getAllNetworkInfo();
+
+            if (net_info != null) {
+                for (int i = 0; i < net_info.length; i++) {
+                    // 判断获得的网络状态是否是处于连接状态
+                    if (net_info[i].getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

@@ -116,7 +116,6 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
 
         holder.checkBox.setClickable(false);
         holder.noteTitle.setText(noteItem.item.getTitle());
-
         int length;
         if (noteItem.item.getText() == null) {
             holder.noteContentPrev.setText(" ");

@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.asc_ii.bangnote.bangnote.R;
@@ -21,22 +23,33 @@ public class NoteSettingActivity extends AppCompatActivity {
     static final public String PREF_NOTE = "note";
     static final public String USER_COLOR = "user_color_id";
     static final public String BANG_COLOR = "bang_color_id";
+    static final public String AUTO_SAVE = "save";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_settings);
-        mNote_Dot_Color_image = (ImageView) findViewById(R.id.Note_Dot_Color);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        SharedPreferences preferences = getSharedPreferences(PREF_NOTE, MODE_PRIVATE);
-        int userColorId = preferences.getInt(USER_COLOR, R.mipmap.dot_blue);
-        mNote_Dot_Color_image.setImageResource(userColorId);
-        int bangColorId = preferences.getInt(BANG_COLOR, R.mipmap.dot_pink);
-        ImageView imageView = (ImageView) findViewById(R.id.BigBang_Note_Dot_Color);
-        imageView.setImageResource(bangColorId);
 
+        mNote_Dot_Color_image = (ImageView) findViewById(R.id.Note_Dot_Color);
         mPopMenuBtn = (TextView) findViewById(R.id.des_Note_Dot_Color);
+
+        RelativeLayout bangNoteHolder = (RelativeLayout) findViewById(R.id.bang_note_holder);
         RelativeLayout userNoteHolder = (RelativeLayout) findViewById(R.id.user_note_holder);
+        ImageView imageView = (ImageView) findViewById(R.id.BigBang_Note_Dot_Color);
+        Switch saveBigBangAsNotes = (Switch) findViewById(R.id.auto_save);
+
+        SharedPreferences preferences = getSharedPreferences(PREF_NOTE, MODE_PRIVATE);
+
+        int userColorId = preferences.getInt(USER_COLOR, R.mipmap.dot_blue);
+        int bangColorId = preferences.getInt(BANG_COLOR, R.mipmap.dot_pink);
+        Boolean isAutoSave = preferences.getBoolean(AUTO_SAVE, false);
+
+        mNote_Dot_Color_image.setImageResource(userColorId);
+        imageView.setImageResource(bangColorId);
+        saveBigBangAsNotes.setChecked(isAutoSave);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         userNoteHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,12 +57,19 @@ public class NoteSettingActivity extends AppCompatActivity {
                 popUpItems(1);
             }
         });
-        RelativeLayout bangNoteHolder = (RelativeLayout) findViewById(R.id.bang_note_holder);
         bangNoteHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPopMenuBtn = (TextView) findViewById(R.id.des_BigBang_Note_Dot_Color);
                 popUpItems(2);
+            }
+        });
+        saveBigBangAsNotes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.Editor editor = getSharedPreferences(PREF_NOTE, MODE_PRIVATE).edit();
+                editor.putBoolean(AUTO_SAVE, isChecked);
+                editor.apply();
             }
         });
     }
