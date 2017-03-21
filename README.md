@@ -1,14 +1,15 @@
 # BangNote
 
 ### 作者：Asc.ii
+项目地址:[BangNote](https://github.com/FrankSFLYS/BangNote.git)
 
 ### 项目来源：    
- 1.BigBang源作者：baoyongzhang，项目地址[BigBang](https://github.com/baoyongzhang/BigBang.git)        
- 2.RichEditor源作者：zzhoujay，项目地址[RichEditor](https://github.com/zzhoujay/RichEditor.git)       
+ 1.BigBang      源作者：baoyongzhang，项目地址[BigBang](https://github.com/baoyongzhang/BigBang.git)        
+ 2.RichEditor   源作者：zzhoujay，项目地址[RichEditor](https://github.com/zzhoujay/RichEditor.git)       
  其他开源库未一一列举，请见谅。       
  3.修改和组装：Asc.ii (小组)       
  
- 开源协议：
+### 开源协议：
  
  MIT License
 
