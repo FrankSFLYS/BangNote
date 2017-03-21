@@ -21,7 +21,6 @@ public class NoteSettingActivity extends AppCompatActivity {
     static final public String PREF_NOTE = "note";
     static final public String USER_COLOR = "user_color_id";
     static final public String BANG_COLOR = "bang_color_id";
-    //static final public String SAVE_BIGBANG_AS_NOTES = "save_bigbang_as_notes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +52,6 @@ public class NoteSettingActivity extends AppCompatActivity {
                 popUpItems(2);
             }
         });
-        /*
-        Switch saveBigBangAsNotes = (Switch) findViewById(R.id.save_bigbang_as_notes);
-        saveBigBangAsNotes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                SharedPreferences.Editor editor = getSharedPreferences(PREF_NOTE, MODE_PRIVATE).edit();
-                editor.putBoolean(SAVE_BIGBANG_AS_NOTES, isChecked);
-                editor.apply();
-            }
-        });
-        */
     }
 
     private void setImageRes(int id, int resId) {
@@ -131,23 +119,4 @@ public class NoteSettingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /*private void initdotcolor(){
-        DotColor blue=new DotColor(R.mipmap.dot_blue);
-        dot_colorList.add(blue);
-        DotColor dark=new DotColor(R.mipmap.dot_dark);
-        dot_colorList.add(dark);
-        DotColor darkblue=new DotColor(R.mipmap.dot_darkblue);
-        dot_colorList.add(darkblue);
-        DotColor yellow=new DotColor(R.mipmap.dot_yellow);
-        dot_colorList.add(yellow);
-        DotColor grey=new DotColor(R.mipmap.dot_grey);
-        dot_colorList.add(grey);
-        DotColor red=new DotColor(R.mipmap.dot_red);
-        dot_colorList.add(red);
-        DotColor green=new DotColor(R.mipmap.dot_green);
-        dot_colorList.add(green);
-        DotColor pink=new DotColor(R.mipmap.dot_pink);
-        dot_colorList.add(pink);
-    }*/
 }

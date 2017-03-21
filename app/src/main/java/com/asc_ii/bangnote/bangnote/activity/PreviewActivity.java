@@ -1,7 +1,5 @@
 package com.asc_ii.bangnote.bangnote.activity;
 
-//package com.zzhoujay.richeditordemo;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,19 +21,7 @@ public class PreviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
-
-        //Intent intent = getIntent();
-        //CharSequence charSequence = intent.getParcelableExtra(TEXT);
-
         textView = (AppCompatTextView) findViewById(R.id.text);
-        /*
-        Intent intent = getIntent();
-        if (intent.getAction().equals(Intent.ACTION_EDIT)) {
-            textView.setText(intent.getStringExtra("text"));
-        } else {
-            textView.setText(EditPadActivity.text);
-        }
-        */
         textView.setText(EditPadActivity.text);
 
         textView.setMovementMethod(LinkMovementMethod.getInstance());

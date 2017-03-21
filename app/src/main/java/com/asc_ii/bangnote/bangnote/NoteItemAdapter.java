@@ -68,9 +68,6 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
         }
         View view = LayoutInflater.from(mContext)
                 .inflate(R.layout.note_item, parent, false);
-        final ViewHolder holder = new ViewHolder(view);
-        int position = holder.getAdapterPosition();
-
         return new ViewHolder(view);
     }
 
@@ -92,38 +89,6 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
             holder.noteColor.setVisibility(View.VISIBLE);
         }
 
-        /*
-        holder.noteColor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generalClickListener(v, position);
-            }
-        });
-        holder.noteTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generalClickListener(v, position);
-            }
-        });
-        holder.noteContentPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generalClickListener(v, position);
-            }
-        });
-        holder.lastEditTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generalClickListener(v, position);
-            }
-        });
-        holder.cardViewHolder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generalClickListener(v, position);
-            }
-        });
-        */
         holder.noteItemLeftHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,19 +114,9 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
             }
         });
 
-        //holder.checkBox.setChecked(noteItem.getChecked());
-
         holder.checkBox.setClickable(false);
-        /*
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                noteItem.setChecked(isChecked);
-            }
-        });
-        */
         holder.noteTitle.setText(noteItem.item.getTitle());
-        //Toast.makeText(mContext, "state:" + noteItem.getChecked(), Toast.LENGTH_SHORT).show();
+
         int length;
         if (noteItem.item.getText() == null) {
             holder.noteContentPrev.setText(" ");

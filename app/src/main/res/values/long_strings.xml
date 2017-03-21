@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_share_text">我正在使用一款超级好用的软件【BangNote】，欢迎你也来试一试哦。</string>
+
     <string name="bigbang_settings_wechat_description">微信支持需要开启辅助功能，目前支持聊天界面文字气泡，点击文字会打开 BigBang
     页面。\n如果有 Xposed 可以开启 BigBang 模块，双击微信中的文字触发，支持聊天页面和朋友圈。</string>
+
     <string name="bigbang_example_bang_text">Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，
         如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。</string>
+
     <string name="wechat_onlongclick_prompt">微信辅助功能，详情请点击</string>
+
     <string name="none_note_items">这里什么都没有，点击按钮新建一条便笺吧。</string>
+
     <string name="auto_copy_selection">结束分词时自动复制选中内容</string>
+
     <string name="long_click_to_bigbang">长按下面文字体验 BigBang</string>
+
     <string name="xposed_app_manage">Xposed 应用管理</string>
+
     <string name="snackbar_new">点击新建便签</string>
+
     <string name="snackbar_delete">点击删除选中的便签</string>
+
     <string name="accessibility_des">打开右上角开关，在弹出的对话框中点击 `确认`。\n\n开启后，在微信聊天页面中点击文字聊天气泡就会打开 BigBang 页面。</string>
+
     <string name="local_parser_tips">无网络，将使用本地分词。</string>
+
     <string name="description">
         核心功能源于 Smartisan OS 的 BigBang 功能。App 打开会从剪切板读取文字并显示，长按会弹出 BigBang 页面进行分词显示。 支持监听剪切板，当有复制内容会弹出一个按钮以打开 BigBang 分词页面。\n支持在微信中使用 BigBang，提供两种方案。\n免 root 方案：需要在系统设置中开启权限，目前仅支持聊天气泡文字，点击文字就可以打开 BigBang 页面。\nXposed 方案：需要安装 Xposed 框架，在 Xposed 中可以找到 BigBang 模块，目前支持聊天气泡文字和朋友圈文字，点击两下触发。\n
     </string>

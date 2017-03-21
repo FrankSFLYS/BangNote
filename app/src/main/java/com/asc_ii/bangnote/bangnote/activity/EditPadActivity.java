@@ -61,7 +61,6 @@ public class EditPadActivity extends AppCompatActivity {
             noteItem.setId(currentEditId);
             noteItem.setCreatedByUser(true);
             noteItem.setCreateTime(System.currentTimeMillis());
-            //noteItem.save();
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -77,7 +76,6 @@ public class EditPadActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.preview:
                 Intent intent = new Intent(this, PreviewActivity.class);
-                 //intent.putExtra(ViewActivity.TEXT,  richEditorView.getSSB());
                  text = richEditorView.getSSB();
                  startActivity(intent);
                  break;
@@ -88,7 +86,6 @@ public class EditPadActivity extends AppCompatActivity {
                 noteItem.setText(text.toString());
                 if (noteItem.getTitle().isEmpty()) {
                     if (noteItem.getText().length() == 0) {
-                        //DataSupport.delete(NoteItem.class, noteItem.getId());
                         finish();
                         return true;
                     } else {

@@ -28,11 +28,6 @@
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_code" />
 
-    <!--android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/btn_color"
-        style="@style/StyleImageButton"
-        app:srcCompat="@drawable/ic_editor_textcolor" /-->
-
     <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_underline"
         style="@style/StateListImageButton"
@@ -47,11 +42,6 @@
         android:id="@+id/btn_link"
         style="@style/StyleImageButton"
         app:srcCompat="@drawable/ic_link" />
-
-    <!--android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/btn_image"
-        style="@style/StyleImageButton"
-        app:srcCompat="@drawable/ic_image" /-->
 
     <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_quote"

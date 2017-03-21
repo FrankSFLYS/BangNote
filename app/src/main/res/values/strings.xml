@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BangNote</string>
 
+    <!-- Navigation Drawer -->
     <string name="navigation_drawer_open">开启导航栏</string>
     <string name="navigation_drawer_close">关闭导航栏</string>
     <string name="navigation_drawer_text">From Asc.ii</string>
@@ -11,6 +12,7 @@
     <string name="action_share">分享</string>
     <string name="action_about">关于</string>
     <string name="action_share_title">分享BangNote</string>
+    <!---->
     <string name="action_edit">编辑</string>
     <string name="action_done">完成</string>
     <string name="new_note">新建</string>
