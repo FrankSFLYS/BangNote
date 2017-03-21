@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="windowBackground">#E6E5E6</color>
+    <color name="bg_select">#d6d7d7</color>
+    <color name="bg_normal">#eeeeee</color>
+    <color name="bg_highlight">#adb8ff</color>
+
+    <string name="blue">蓝色</string>
+    <string name="dark">黑色</string>
+    <string name="darkblue">深蓝色</string>
+    <string name="green">绿色</string>
+    <string name="red">红色</string>
+    <string name="grey">灰色</string>
+    <string name="pink">粉色</string>
+    <string name="yellow">黄色</string>
+</resources>

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">BangNote</string>
+
+    <string name="navigation_drawer_open">开启导航栏</string>
+    <string name="navigation_drawer_close">关闭导航栏</string>
+    <string name="navigation_drawer_text">From Asc.ii</string>
+    <string name="action_settings">设置</string>
+    <string name="bigbang_settings">BigBang 设置</string>
+    <string name="note_settings">Note 设置</string>
+    <string name="share_and_about">分享和关于</string>
+    <string name="action_share">分享</string>
+    <string name="action_about">关于</string>
+    <string name="action_share_title">分享BangNote</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_done">完成</string>
+    <string name="new_note">新建</string>
+    <string name="weChat_click">微信设置</string>
+    <string name="style">样式</string>
+
+    <string name="item_default_search_engine">默认搜索引擎</string>
+    <string name="item_default_parser_engine">默认分词引擎</string>
+    <string name="listen_clipboard">监听剪切板</string>
+    <string name="internet_api">网络 API</string>
+    <string name="baidu">百度</string>
+    <string name="right">></string>
+    <string name="bigbang_style">BigBang 样式</string>
+
+    <string name="empty_title">无标题</string>
+
+    <string name="warn_note_list_empty">当前没有便签</string>
+    <string name="preview">预览</string>
+    <string name="insert_link">插入链接</string>
+    <string name="insert">插入</string>
+    <string name="cancel">取消</string>
+    <string name="link_text">文字：</string>
+    <string name="link_link">链接：</string>
+
+    <string name="search">搜索</string>
+    <string name="no_result">没有数据</string>
+
+    <string name="edit_title">输入标题</string>
+</resources>
