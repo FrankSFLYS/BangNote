@@ -23,9 +23,9 @@ android {
         }
     }
     productFlavors {
-        ik {}
-        jieba {}
-        jcseg {}
+        //ik {}
+        //jieba {}
+        //jcseg {}
         wandoujia {}
     }
 

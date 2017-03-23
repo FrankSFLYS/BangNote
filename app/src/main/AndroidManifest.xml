@@ -22,7 +22,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.BigBangSettingsActivity"
-            android:label="@string/action_settings"
+            android:label="@string/bigbang_settings"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.NoteSettingActivity"
             android:label="@string/note_settings"
