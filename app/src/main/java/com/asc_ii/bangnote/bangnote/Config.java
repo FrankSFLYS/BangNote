@@ -28,7 +28,6 @@ public interface Config {
     @Default(SegmentEngine.TYPE_NETWORK)
     String getSegmentEngine();
     void setSegmentEngine(String segmentEngine);
-
     @Default("10")
     int getLineSpace();
     void setLineSpace(int space);

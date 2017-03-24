@@ -44,4 +44,7 @@
 
     <string name="edit_title">输入标题</string>
     <string name="about_bangnote">关于 BangNote</string>
+
+    <string name="banging">正在分词</string>
+    <string name="user_note_color">用户便签颜色</string>
 </resources>

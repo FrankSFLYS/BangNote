@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
             boolean isOnSelectMode = false;
             if (noteItemCreatorList.size() == 0) {
                 setExitSelectMode(item);
-                Toast.makeText(this, R.string.warn_note_list_empty, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.warn_note_list_empty, Toast.LENGTH_SHORT).show();
             } else {
                 for (NoteItemCreator itemCreator : noteItemCreatorList) {
                     if (itemCreator != null) {

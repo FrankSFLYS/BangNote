@@ -80,7 +80,7 @@ public class BigBangSettingsActivity extends AppCompatActivity {
         mweChatSummaryOfDescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(BigBangSettingsActivity.this,R.string.bigbang_settings_wechat_description, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),R.string.bigbang_settings_wechat_description, Toast.LENGTH_LONG).show();
             }
         });
 

@@ -31,4 +31,8 @@
     </string>
 
     <string name="auto_save">分词结束后自动存为便签</string>
+
+    <string name="network_unavailable">网络不可用，将使用本地词库进行分词</string>
+
+    <string name="native_parser_is_slow">本地词库分词耗时较长，请耐心等待</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.SwitchCompat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -36,7 +37,7 @@ public class NoteSettingActivity extends AppCompatActivity {
         RelativeLayout bangNoteHolder = (RelativeLayout) findViewById(R.id.bang_note_holder);
         RelativeLayout userNoteHolder = (RelativeLayout) findViewById(R.id.user_note_holder);
         ImageView imageView = (ImageView) findViewById(R.id.BigBang_Note_Dot_Color);
-        Switch saveBigBangAsNotes = (Switch) findViewById(R.id.auto_save);
+        SwitchCompat saveBigBangAsNotes = (SwitchCompat) findViewById(R.id.auto_save);
 
         SharedPreferences preferences = getSharedPreferences(PREF_NOTE, MODE_PRIVATE);
 

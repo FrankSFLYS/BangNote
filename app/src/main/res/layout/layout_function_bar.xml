@@ -38,10 +38,10 @@
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_strikethrough" />
 
-    <android.support.v7.widget.AppCompatImageButton
+    <!--android.support.v7.widget.AppCompatImageButton
         android:id="@+id/btn_link"
         style="@style/StyleImageButton"
-        app:srcCompat="@drawable/ic_link" />
+        app:srcCompat="@drawable/ic_link" /-->
 
     <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_quote"

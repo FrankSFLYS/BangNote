@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -35,7 +35,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:layout_toRightOf="@id/Note_Dot_Color"
-                android:text="普通便签颜色"
+                android:text="@string/user_note_color"
                 android:textColor="@color/colorPrimaryDark"/>
 
         </RelativeLayout>
@@ -70,7 +70,7 @@
 
         </RelativeLayout>
 
-        <Switch
+        <android.support.v7.widget.SwitchCompat
             android:id="@+id/auto_save"
             android:layout_width="match_parent"
             android:layout_height="53dp"

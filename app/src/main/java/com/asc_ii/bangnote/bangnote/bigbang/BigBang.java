@@ -8,6 +8,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.StringDef;
+import android.widget.Toast;
 
 import com.asc_ii.bangnote.bangnote.Config;
 import com.asc_ii.bangnote.bangnote.ThirdPartyParser;
@@ -85,14 +86,16 @@ public class BigBang {
                 return new CharacterParser();
             case TYPE_NETWORK:
                 if (!isNetworkAvailable(context)) {
+                    Toast.makeText(context, "网络不可用，将使用本地词库进行分词", Toast.LENGTH_SHORT).show();
                     return new ThirdPartyParser(context);
                 } else {
                     return new NetworkParser();
                 }
             case TYPE_THIRD:
                 return new ThirdPartyParser(context);
+            default:
+                return new ThirdPartyParser(context);
         }
-        return sParser;
     }
 
     public static void setSegmentParser(SimpleParser parser) {
@@ -111,7 +114,7 @@ public class BigBang {
         return sItemTextSize;
     }
 
-    private static boolean isNetworkAvailable(Context context) {
+    public static boolean isNetworkAvailable(Context context) {
 
         // 获得网络状态管理器
         ConnectivityManager connectivityManager = (ConnectivityManager) context

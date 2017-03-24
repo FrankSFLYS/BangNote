@@ -7,6 +7,7 @@
     <color name="bg_select">#d6d7d7</color>
     <color name="bg_normal">#eeeeee</color>
     <color name="bg_highlight">#adb8ff</color>
+    <color name="color_blue">#303F9F</color>
 
     <string name="blue">蓝色</string>
     <string name="dark">黑色</string>

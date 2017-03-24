@@ -106,6 +106,9 @@ public class RichEditorFunctionBar extends HorizontalScrollView implements Curso
         StateListImageButton underline = (StateListImageButton) findViewById(R.id.btn_underline);
         StateListImageButton delete = (StateListImageButton) findViewById(R.id.btn_delete);
         StateListImageButton quote = (StateListImageButton) findViewById(R.id.btn_quote);
+        /*
+        插入链接功能：在修复前将关闭
+        修改范围：此文件createLinkInsertDialog，此注释，layout->layout_function_bar.xml三处
         AppCompatImageButton link = (AppCompatImageButton) findViewById(R.id.btn_link);
         link.setOnClickListener(new OnClickListener() {
             @Override
@@ -125,7 +128,7 @@ public class RichEditorFunctionBar extends HorizontalScrollView implements Curso
                 }, src).show();
             }
         });
-
+        */
         stateListImageButtonSparseArray = new SparseArray<>();
         typeSet = new HashSet<>();
 
@@ -210,6 +213,7 @@ public class RichEditorFunctionBar extends HorizontalScrollView implements Curso
         void call(String text, String link);
     }
 
+    /*
     private AlertDialog createLinkInsertDialog(Context context, final LinkInsertCallback callback, String src) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         View view = LayoutInflater.from(context).inflate(R.layout.layout_link_insert, null);
@@ -231,6 +235,6 @@ public class RichEditorFunctionBar extends HorizontalScrollView implements Curso
                 }).setNegativeButton(getResources().getString(R.string.cancel), null);
         return builder.create();
     }
-
+    */
 
 }

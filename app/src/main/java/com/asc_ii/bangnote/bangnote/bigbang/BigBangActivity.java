@@ -5,6 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.asc_ii.bangnote.bangnote.R;
@@ -48,6 +51,15 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
             }
 
             SimpleParser parser = BigBang.getSegmentParser(getApplicationContext());
+            final LinearLayout progress_waiting = (LinearLayout) findViewById(R.id.waiting_show);
+            final TextView nativeParser = (TextView) findViewById(R.id.native_slow_wait_text);
+            progress_waiting.setVisibility(View.VISIBLE);
+            if (!BigBang.isNetworkAvailable(getApplicationContext())) {
+                nativeParser.setVisibility(View.VISIBLE);
+            } else {
+                nativeParser.setVisibility(View.INVISIBLE);
+            }
+
             parser.parse(text, new HandlerCallback<String[]>() {
                 @Override
                 public void onFinish(String[] result) {
@@ -55,6 +67,13 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
                     for (String str : result) {
                         mLayout.addTextItem(str);
                     }
+                    progress_waiting.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            progress_waiting.setVisibility(View.GONE);
+                            nativeParser.setVisibility(View.INVISIBLE);
+                        }
+                    });
                 }
 
                 @Override
