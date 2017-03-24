@@ -24,7 +24,7 @@
             android:name=".activity.BigBangSettingsActivity"
             android:label="@string/bigbang_settings"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.NoteSettingActivity"
+        <activity android:name=".activity.NoteSettingsActivity"
             android:label="@string/note_settings"
             android:screenOrientation="portrait"/>
         <activity

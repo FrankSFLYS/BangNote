@@ -32,8 +32,8 @@ public class App extends Application {
         BigBang.registerAction(BigBang.ACTION_SAVE, SaveAction.create());
         Config config = Treasure.get(this, Config.class);
         BigBang.registerAction(BigBang.ACTION_BACK, config.isAutoCopy() ? CopyAction.create() : null);
-        SharedPreferences preferences = getSharedPreferences(NoteSettingActivity.PREF_NOTE, MODE_PRIVATE);
-        Boolean isAutoSave = preferences.getBoolean(NoteSettingActivity.AUTO_SAVE, false);
+        SharedPreferences preferences = getSharedPreferences(NoteSettingsActivity.PREF_NOTE, MODE_PRIVATE);
+        Boolean isAutoSave = preferences.getBoolean(NoteSettingsActivity.AUTO_SAVE, false);
         BigBang.registerAction(BigBang.ACTION_SAVE, isAutoSave ? SaveAction.create() : null);
 
         SegmentEngine.setup(this);

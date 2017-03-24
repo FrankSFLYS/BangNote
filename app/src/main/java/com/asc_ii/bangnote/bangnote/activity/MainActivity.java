@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences preferences = this.getSharedPreferences(NoteSettingActivity.PREF_NOTE, MODE_PRIVATE);
-        int userColorRID = preferences.getInt(NoteSettingActivity.USER_COLOR, R.mipmap.dot_blue);
-        int bangColorRID = preferences.getInt(NoteSettingActivity.BANG_COLOR, R.mipmap.dot_pink);
+        SharedPreferences preferences = this.getSharedPreferences(NoteSettingsActivity.PREF_NOTE, MODE_PRIVATE);
+        int userColorRID = preferences.getInt(NoteSettingsActivity.USER_COLOR, R.mipmap.dot_blue);
+        int bangColorRID = preferences.getInt(NoteSettingsActivity.BANG_COLOR, R.mipmap.dot_pink);
         NoteItemCreator.setUserColorRID(userColorRID);
         NoteItemCreator.setBangColorRID(bangColorRID);
         initNoteItemList();
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.nav_note_settigns:
-                Intent intent_note = new Intent(MainActivity.this, NoteSettingActivity.class);
+                Intent intent_note = new Intent(MainActivity.this, NoteSettingsActivity.class);
                 startActivity(intent_note);
                 break;
             case R.id.nav_share:
