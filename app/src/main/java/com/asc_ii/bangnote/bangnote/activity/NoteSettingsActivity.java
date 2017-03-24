@@ -10,12 +10,13 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.asc_ii.bangnote.bangnote.R;
+import com.asc_ii.bangnote.bangnote.action.SaveAction;
+import com.asc_ii.bangnote.bangnote.bigbang.BigBang;
 
-public class NoteSettingActivity extends AppCompatActivity {
+public class NoteSettingsActivity extends AppCompatActivity {
 
     private ImageView mNote_Dot_Color_image;
 
@@ -71,6 +72,11 @@ public class NoteSettingActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences(PREF_NOTE, MODE_PRIVATE).edit();
                 editor.putBoolean(AUTO_SAVE, isChecked);
                 editor.apply();
+                if (isChecked) {
+                    BigBang.registerAction(BigBang.ACTION_SAVE, SaveAction.create());
+                } else {
+                    BigBang.unregisterAction(BigBang.ACTION_SAVE);
+                }
             }
         });
     }
@@ -92,7 +98,7 @@ public class NoteSettingActivity extends AppCompatActivity {
     }
 
     private void popUpItems(final int id) {
-        PopupMenu popup = new PopupMenu(NoteSettingActivity.this, mPopMenuBtn);
+        PopupMenu popup = new PopupMenu(NoteSettingsActivity.this, mPopMenuBtn);
         //Inflating the Popup using xml file
         popup.getMenuInflater().inflate(R.menu.dot_color_menu, popup.getMenu());
         //registering popup with OnMenuItemClickListener
