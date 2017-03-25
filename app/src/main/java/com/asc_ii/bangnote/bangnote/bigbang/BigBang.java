@@ -38,6 +38,11 @@ public class BigBang {
     public static final String ACTION_COPY = "copy";
     public static final String ACTION_BACK = "back";
     public static final String ACTION_SAVE = "save";
+    public static final int SET_AS_CHARACTER_PARSER = 0;
+    public static final int SET_AS_NATIVE_PARSER = 1;
+    public static final int NETWORK_NOT_AVAILABLE = 2;
+    public static final int NETWORK_PARSER_USING = 3;
+    public static int parserType;
     private static SimpleParser sParser;
     private static int sItemSpace;
     private static int sLineSpace;
@@ -83,17 +88,21 @@ public class BigBang {
         String segmentEngine = Treasure.get(context, Config.class).getSegmentEngine();
         switch (segmentEngine) {
             case TYPE_CHARACTER:
+                parserType = SET_AS_CHARACTER_PARSER;
                 return new CharacterParser();
             case TYPE_NETWORK:
                 if (!isNetworkAvailable(context)) {
-                    Toast.makeText(context, "网络不可用，将使用本地词库进行分词", Toast.LENGTH_SHORT).show();
+                    parserType = NETWORK_NOT_AVAILABLE;
                     return new ThirdPartyParser(context);
                 } else {
+                    parserType = NETWORK_PARSER_USING;
                     return new NetworkParser();
                 }
             case TYPE_THIRD:
+                parserType = SET_AS_NATIVE_PARSER;
                 return new ThirdPartyParser(context);
             default:
+                parserType = SET_AS_NATIVE_PARSER;
                 return new ThirdPartyParser(context);
         }
     }
