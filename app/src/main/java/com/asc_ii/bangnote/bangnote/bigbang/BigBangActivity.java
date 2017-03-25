@@ -54,10 +54,15 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
             final LinearLayout progress_waiting = (LinearLayout) findViewById(R.id.waiting_show);
             final TextView nativeParser = (TextView) findViewById(R.id.native_slow_wait_text);
             progress_waiting.setVisibility(View.VISIBLE);
-            if (!BigBang.isNetworkAvailable(getApplicationContext())) {
-                nativeParser.setVisibility(View.VISIBLE);
-            } else {
-                nativeParser.setVisibility(View.INVISIBLE);
+            switch (BigBang.parserType) {
+                case BigBang.NETWORK_NOT_AVAILABLE:
+                    Toast.makeText(getApplicationContext(), getString(R.string.network_unavailable), Toast.LENGTH_SHORT).show();
+                case BigBang.SET_AS_NATIVE_PARSER:
+                    nativeParser.setVisibility(View.VISIBLE);
+                    break;
+                case BigBang.SET_AS_CHARACTER_PARSER:
+                case BigBang.NETWORK_PARSER_USING:
+                    nativeParser.setVisibility(View.INVISIBLE);
             }
 
             parser.parse(text, new HandlerCallback<String[]>() {
