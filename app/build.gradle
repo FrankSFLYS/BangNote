@@ -12,7 +12,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.asc_ii.bangnote.bangnote"
+        applicationId "com.asc_ii.bangnote"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -33,7 +33,7 @@ android {
         jcseg {}
         wandoujia {
             minSdkVersion 15
-            applicationId 'com.asc_ii.bangnote.bangnote'
+            applicationId 'com.asc_ii.bangnote'
             targetSdkVersion 25
             testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
             versionCode 1

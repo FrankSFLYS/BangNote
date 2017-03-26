@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#8D9FB8"
     android:fillViewport="true"
-    tools:context="com.asc_ii.bangnote.bangnote.bigbang.BigBangActivity">
+    tools:context="com.asc_ii.bangnote.bigbang.BigBangActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         </LinearLayout>
 
 
-        <com.asc_ii.bangnote.bangnote.bigbang.BigBangLayout
+        <com.asc_ii.bangnote.bigbang.BigBangLayout
             android:id="@+id/bigbang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
