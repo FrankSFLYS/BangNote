@@ -13,27 +13,27 @@
         android:layout_margin="2dp"
         android:background="@drawable/bg_normal_shape" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_bold"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_bold" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_italic"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_italic" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_code"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_code" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_underline"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_underline" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_delete"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_strikethrough" />
@@ -43,7 +43,7 @@
         style="@style/StyleImageButton"
         app:srcCompat="@drawable/ic_link" /-->
 
-    <com.asc_ii.bangnote.bangnote.richeditor.StateListImageButton
+    <com.asc_ii.bangnote.richeditor.StateListImageButton
         android:id="@+id/btn_quote"
         style="@style/StateListImageButton"
         app:srcCompat="@drawable/ic_editor_quote" />

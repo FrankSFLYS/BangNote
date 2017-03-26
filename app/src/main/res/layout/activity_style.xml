@@ -11,20 +11,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.asc_ii.bangnote.bangnote.activity.StyleActivity">
+    tools:context="com.asc_ii.bangnote.activity.StyleActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <com.asc_ii.bangnote.bangnote.bigbang.BigBangLayout
+        <com.asc_ii.bangnote.bigbang.BigBangLayout
             android:id="@+id/bigbang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-        </com.asc_ii.bangnote.bangnote.bigbang.BigBangLayout>
+        </com.asc_ii.bangnote.bigbang.BigBangLayout>
     </FrameLayout>
 
     <TextView
