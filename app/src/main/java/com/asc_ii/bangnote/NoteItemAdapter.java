@@ -118,17 +118,7 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
 
         holder.checkBox.setClickable(false);
         holder.noteTitle.setText(noteItem.item.getTitle());
-        int length;
-        if (noteItem.item.getText() == null) {
-            holder.noteContentPrev.setText(" ");
-        } else {
-            length = noteItem.item.getText().length();
-            if(length < 30) {
-                holder.noteContentPrev.setText(noteItem.item.getText().substring(0, length));
-            } else {
-                holder.noteContentPrev.setText(noteItem.item.getText().substring(0, 30));
-            }
-        }
+        holder.noteContentPrev.setText(noteItem.item.getPrevText() == null ? "" : noteItem.item.getPrevText());
         holder.lastEditTime.setText(simpleDateFormat.format(new Date(noteItem.item.getLastEditTime())));
     }
 

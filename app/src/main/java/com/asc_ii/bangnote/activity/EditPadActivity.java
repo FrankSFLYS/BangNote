@@ -2,8 +2,10 @@ package com.asc_ii.bangnote.activity;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
@@ -53,7 +55,11 @@ public class EditPadActivity extends AppCompatActivity {
             //Edit Exists note item
             noteItem = DataSupport.find(NoteItem.class, currentEditId);
             richEditorTitle.setText(noteItem.getTitle());
-            richEditorView.setText(noteItem.getText());
+            if (Build.VERSION.SDK_INT < 24) {
+                richEditorView.setText(Html.fromHtml(noteItem.getText()));
+            } else {
+                richEditorView.setText(Html.fromHtml(noteItem.getText(), Html.FROM_HTML_MODE_COMPACT));
+            }
             richEditorView.setMovementMethod(LinkMovementMethod.getInstance());
 
         } else {
@@ -80,21 +86,9 @@ public class EditPadActivity extends AppCompatActivity {
                  startActivity(intent);
                  break;
             case android.R.id.home:
-                noteItem.setLastEditTime(System.currentTimeMillis());
-                noteItem.setTitle(richEditorTitle.getSSB().toString());
-                SpannableStringBuilder text = richEditorView.getSSB();
-                noteItem.setText(text.toString());
-                if (noteItem.getTitle().isEmpty()) {
-                    if (noteItem.getText().length() == 0) {
-                        finish();
-                        return true;
-                    } else {
-                        noteItem.setTitle(getResources().getString(R.string.empty_title));
-                    }
-                }
-                noteItem.save();
+                boolean savedOrNot = saveNote();
                 finish();
-                return true;
+                return savedOrNot;
         }
         return true;
     }
@@ -102,20 +96,42 @@ public class EditPadActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        saveNote();
+    }
 
+    private boolean saveNote() {
         noteItem.setLastEditTime(System.currentTimeMillis());
         noteItem.setTitle(richEditorTitle.getSSB().toString());
+
         SpannableStringBuilder text = richEditorView.getSSB();
-        noteItem.setText(text.toString());
-        if (noteItem.getTitle().isEmpty()) {
-            if (noteItem.getText().length() == 0) {
-                //标题和内容全为空，不保存
-            } else {
-                noteItem.setTitle(getResources().getString(R.string.empty_title));
-                noteItem.save();
+        if (text != null) {
+            //Set if title is null
+            if (noteItem.getTitle().isEmpty()) {
+                noteItem.setTitle(getString(R.string.empty_title));
             }
-        } else {
+            //Set content text
+            if (Build.VERSION.SDK_INT < 24) {
+                noteItem.setText(Html.toHtml(text));
+            } else {
+                noteItem.setText(Html.toHtml(text, Html.TO_HTML_PARAGRAPH_LINES_CONSECUTIVE));
+            }
+            //Set preview text
+            int length = text.length();
+            noteItem.setPrevText((length > 30 ?
+                    text.subSequence(0, 30).toString()
+                    : text.subSequence(0, length).toString()));
             noteItem.save();
+            return true;
+        } else {
+            if (noteItem.getTitle().isEmpty()) {
+                //Save nothing
+                return false;
+            } else {
+                //Save title only
+                noteItem.setText("");
+                noteItem.save();
+                return true;
+            }
         }
     }
 }

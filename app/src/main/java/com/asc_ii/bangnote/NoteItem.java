@@ -14,6 +14,7 @@ public class NoteItem extends DataSupport {
     private long lastEditTime;
     private String title;
     private String text;
+    private String prevText;
     private String picDir;
     private String HTMLDir;
 
@@ -80,4 +81,13 @@ public class NoteItem extends DataSupport {
     public void setHTMLDir(String HTMLDir) {
         this.HTMLDir = HTMLDir;
     }
+
+    public String getPrevText() {
+        return prevText;
+    }
+
+    public void setPrevText(String prevText) {
+        this.prevText = prevText;
+    }
+
 }
