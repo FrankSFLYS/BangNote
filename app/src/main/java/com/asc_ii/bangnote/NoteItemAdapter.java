@@ -2,6 +2,7 @@ package com.asc_ii.bangnote;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -33,7 +34,7 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
     private List<NoteItemCreator> mNoteItemList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        CheckBox checkBox;
+        AppCompatCheckBox checkBox;
         ImageView noteColor;
         TextView noteTitle;
         TextView noteContentPrev;
@@ -46,10 +47,10 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.ViewHo
 
         public ViewHolder(View view) {
             super(view);
-            checkBox = (CheckBox)view.findViewById(R.id.note_item_checkbox);
+            checkBox = (AppCompatCheckBox) view.findViewById(R.id.note_item_checkbox);
             noteColor = (ImageView) view.findViewById(R.id.note_item_color_tag);
             noteTitle = (TextView) view.findViewById(R.id.note_item_title);
-            noteContentPrev=(TextView)view.findViewById(R.id.note_item_content_preview);
+            noteContentPrev = (TextView) view.findViewById(R.id.note_item_content_preview);
             lastEditTime = (TextView) view.findViewById(R.id.note_item_last_edit_time);
             cardViewHolder = (CardView) view.findViewById(R.id.note_item_card_view_holder);
             noteItemLeftHolder = (LinearLayout) view.findViewById(R.id.note_item_left_holder);

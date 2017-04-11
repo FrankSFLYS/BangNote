@@ -107,6 +107,9 @@ public class EditPadActivity extends AppCompatActivity {
         if (text != null) {
             //Set if title is null
             if (noteItem.getTitle().isEmpty()) {
+                if(text.length() == 0) {
+                    return false;   //No text
+                }
                 noteItem.setTitle(getString(R.string.empty_title));
             }
             //Set content text

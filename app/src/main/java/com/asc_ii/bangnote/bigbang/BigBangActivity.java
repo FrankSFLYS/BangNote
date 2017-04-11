@@ -1,7 +1,9 @@
 package com.asc_ii.bangnote.bigbang;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -10,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.asc_ii.bangnote.R;
 import com.asc_ii.bangnote.segment.HandlerCallback;
 import com.asc_ii.bangnote.segment.SimpleParser;
@@ -53,7 +56,9 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
             SimpleParser parser = BigBang.getSegmentParser(getApplicationContext());
             final LinearLayout progress_waiting = (LinearLayout) findViewById(R.id.waiting_show);
             final TextView nativeParser = (TextView) findViewById(R.id.native_slow_wait_text);
+            final LottieAnimationView banging = (LottieAnimationView) findViewById(R.id.banging_animation);
             progress_waiting.setVisibility(View.VISIBLE);
+            banging.setVisibility(View.VISIBLE);
             switch (BigBang.parserType) {
                 case BigBang.NETWORK_NOT_AVAILABLE:
                     Toast.makeText(getApplicationContext(), getString(R.string.network_unavailable), Toast.LENGTH_SHORT).show();
@@ -77,6 +82,7 @@ public class BigBangActivity extends AppCompatActivity implements BigBangLayout.
                         public void run() {
                             progress_waiting.setVisibility(View.GONE);
                             nativeParser.setVisibility(View.INVISIBLE);
+                            banging.setVisibility(View.GONE);
                         }
                     });
                 }
