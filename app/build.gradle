@@ -69,4 +69,5 @@ dependencies {
     compile 'com.huaban:jieba-analysis:1.0.2'
     provided 'de.robv.android.xposed:api:82'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.airbnb.android:lottie:2.0.0-beta3'
 }
