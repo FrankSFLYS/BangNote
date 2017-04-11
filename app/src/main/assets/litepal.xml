@@ -2,9 +2,9 @@
 <litepal>
     <dbname value="Notes"></dbname>
 
-    <version value="1"></version>
+    <version value="4"></version>
 
     <list>
-        <mapping class="com.asc_ii.bangnote.bangnote.NoteItem"></mapping>
+        <mapping class="com.asc_ii.bangnote.NoteItem"></mapping>
     </list>
 </litepal>

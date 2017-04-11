@@ -9,14 +9,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.asc_ii.bangnote.bangnote.activity.EditPadActivity">
+    tools:context="com.asc_ii.bangnote.activity.EditPadActivity">
 
-    <com.asc_ii.bangnote.bangnote.richeditor.RichEditorFunctionBar
+    <com.asc_ii.bangnote.richeditor.RichEditorFunctionBar
         android:id="@+id/function_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.asc_ii.bangnote.bangnote.richeditor.RichEditorView
+    <com.asc_ii.bangnote.richeditor.RichEditorView
         android:id="@+id/edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:maxLines="2"
         android:hint="@string/edit_title"/>
 
-    <com.asc_ii.bangnote.bangnote.richeditor.RichEditorView
+    <com.asc_ii.bangnote.richeditor.RichEditorView
         android:id="@+id/edit"
         android:lineSpacingExtra="2dp"
         android:layout_width="match_parent"

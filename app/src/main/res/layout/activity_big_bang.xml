@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_big_bang"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8D9FB8"
     android:fillViewport="true"
-    tools:context="com.asc_ii.bangnote.bangnote.bigbang.BigBangActivity">
+    tools:context="com.asc_ii.bangnote.bigbang.BigBangActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/banging_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            app:lottie_fileName="loading_semicircle.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
 
         <LinearLayout
             android:id="@+id/waiting_show"
@@ -23,26 +33,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/banging"/>
-
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/native_slow_wait_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:visibility="invisible"
                 android:text="@string/native_parser_is_slow"/>
 
         </LinearLayout>
 
 
-        <com.asc_ii.bangnote.bangnote.bigbang.BigBangLayout
+
+        <com.asc_ii.bangnote.bigbang.BigBangLayout
             android:id="@+id/bigbang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
